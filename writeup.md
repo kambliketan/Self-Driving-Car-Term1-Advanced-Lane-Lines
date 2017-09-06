@@ -31,7 +31,7 @@ The goals / steps of this project are the following:
 [image10]: ./output_images/warp_example.png "Example Warped Image"
 [image11]: ./output_images/fit_poly.png "Identifying Lanes and Fitting Polynomial"
 [image12]: ./output_images/draw_lanes.png "Drawing lanes on original image"
-[video1]: ./project_video.mp4 "Video"
+[video1]: ./output_project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
 
