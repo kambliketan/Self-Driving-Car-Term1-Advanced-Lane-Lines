@@ -19,18 +19,18 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./output_images/removing_distortion.png "Undistorted"
-[image2]: ./output_images/removing_distortion_test_images.png "Undistorted2"
-[image3]: ./output_images/x_y_gradient_threshold.png "X Y Gradient Threshold"
-[image4]: ./output_images/magnitude_gradient_threshold.png "Magnitude Gradient Threshold"
-[image5]: ./output_images/directional_gradient_threshold.png "Directional Grandient Threshold"
-[image6]: ./output_images/combined_gradient_threshold.png "Combined Grandient Threshold"
-[image7]: ./output_images/s_channel_threshold.png "S Channel Threshold"
-[image8]: ./output_images/combined_gradient_color_threshold.png "Combined Grandient Color Threshold"
-[image9]: ./output_images/straight_line_with_src_points_for_perspective_transform.png "Src Points for Perspective Transform"
-[image10]: ./output_images/warp_example.png "Example Warped Image"
-[image11]: ./output_images/fit_poly.png "Identifying Lanes and Fitting Polynomial"
-[image12]: ./output_images/draw_lanes.png "Drawing lanes on original image"
+[image1]: ./output_images/removing_distortion.PNG "Undistorted"
+[image2]: ./output_images/removing_distortion_test_images.PNG "Undistorted2"
+[image3]: ./output_images/x_y_gradient_threshold.PNG "X Y Gradient Threshold"
+[image4]: ./output_images/magnitude_gradient_threshold.PNG "Magnitude Gradient Threshold"
+[image5]: ./output_images/directional_gradient_threshold.PNG "Directional Grandient Threshold"
+[image6]: ./output_images/combined_gradient_threshold.PNG "Combined Grandient Threshold"
+[image7]: ./output_images/s_channel_threshold.PNG "S Channel Threshold"
+[image8]: ./output_images/combined_gradient_color_threshold.PNG "Combined Grandient Color Threshold"
+[image9]: ./output_images/straight_line_with_src_points_for_perspective_transform.PNG "Src Points for Perspective Transform"
+[image10]: ./output_images/warp_example.PNG "Example Warped Image"
+[image11]: ./output_images/fit_poly.PNG "Identifying Lanes and Fitting Polynomial"
+[image12]: ./output_images/draw_lanes.PNG "Drawing lanes on original image"
 [video1]: ./output_project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -64,6 +64,7 @@ I then write a function that can be called to undistort any given image in code 
 #### 1. Provide an example of a distortion-corrected image.
 
 In code cell 6, I try the undistortion out on all the test images, here are couple of examples:
+
 ![alt text][image2]
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image. Provide an example of a binary image result.
