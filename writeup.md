@@ -27,10 +27,10 @@ The goals / steps of this project are the following:
 [image6]: ./output_images/combined_gradient_threshold.PNG "Combined Grandient Threshold"
 [image7]: ./output_images/s_channel_threshold.PNG "S Channel Threshold"
 [image8]: ./output_images/combined_gradient_color_threshold.PNG "Combined Grandient Color Threshold"
-[image9]: ./output_images/straight_line_with_src_points_for_perspective_transform.PNG "Src Points for Perspective Transform"
+[image9]: ./output_images/straight_line_with_src_points_for_perspective_transform.png "Src Points for Perspective Transform"
 [image10]: ./output_images/warp_example.PNG "Example Warped Image"
-[image11]: ./output_images/fit_poly.PNG "Identifying Lanes and Fitting Polynomial"
-[image12]: ./output_images/draw_lanes.PNG "Drawing lanes on original image"
+[image11]: ./output_images/fit_poly.png "Identifying Lanes and Fitting Polynomial"
+[image12]: ./output_images/draw_lanes.png "Drawing lanes on original image"
 [video1]: ./output_project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
