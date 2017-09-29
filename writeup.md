@@ -31,6 +31,7 @@ The goals / steps of this project are the following:
 [image10]: ./output_images/warp_example.PNG "Example Warped Image"
 [image11]: ./output_images/fit_poly.png "Identifying Lanes and Fitting Polynomial"
 [image12]: ./output_images/draw_lanes.png "Drawing lanes on original image"
+[image13]: ./output_images/problem_image.png "Problematic Image"
 [video1]: ./output_project_video.mp4 "Video"
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
@@ -159,7 +160,43 @@ Functions used in order are:
     result = draw_lanes(image, warped, left_fit, right_fit)
 ```
 
-Here's a [link to my video result](./output_project_video.mp4)
+With above code I was running into issues where under some lighting conditions, the pipeline (one without neighborhood search) would fail to find lines:
+
+![alt text][image13]
+
+To avoid such situations and to overall smooth the lane detection, I used `neighborhood_search_fit_poly` function (shown in code cell 23 of the Ipython notebook) to only search in the vicinity of the previous detection. This helped correct above situation. Here's modified step4:
+
+``` python
+# keep history of num_frames_history frames
+# and use average over history of frames
+
+# bootstrap first lanes without neighborhood search:
+if len(saved_left_fit) <= num_frames_history:
+    left_fit, right_fit, left_lane_inds, right_lane_inds = sliding_window_fit_poly(warped)
+    index.append(1)
+    saved_left_fit.append(left_fit)
+    saved_right_fit.append(right_fit)
+else:
+
+    # use average over history of frames to compute neighborhood to search
+    left_fit = get_avg_fit(saved_left_fit)
+    right_fit = get_avg_fit(saved_right_fit)
+    left_fit, right_fit, left_lane_inds, right_lane_inds = neighborhood_search_fit_poly(warped, left_fit, right_fit)
+    
+    # refresh cache of frames
+    saved_left_fit.pop(0)
+    saved_right_fit.pop(0)
+    
+    saved_left_fit.append(left_fit)
+    saved_right_fit.append(right_fit)
+
+# use new averages for step 5 onwards:
+left_fit = get_avg_fit(saved_left_fit)
+right_fit = get_avg_fit(saved_right_fit)
+
+```
+
+Here's a [link to my video result](./output_project_video_final.mp4)
 
 ---
 
@@ -172,3 +209,4 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 I feel fairly confident about coming up with accurate camera matrix and being able to undistort the images taken by camera. I also feel ok about the perspective transform although I would still play around with the hardcoded values if the lanes are curvier than the ones in project_video.
 
 I feel that if I have to pursue this project further I would work on the combination of gradient and color thresholding. I think that can be made more robust to work under all lighting conditions and road surfaces. The code for example doesnt do as good on the challenge videos.
+
